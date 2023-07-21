@@ -39,3 +39,48 @@ What has changed in this version of the Community Edition?
 - Changed function name do to deprecated class constructor.
 - Further 8.x compatibility from Topic with fixes ([Forum Thread](http://get-simple.info/forums/showthread.php?tid=16548))
 
+=====================
+Upgrade Instructions:
+=====================
+- Always create a backup to protect against the unexpected!
+- Overwrite existing files with the files included in this patch.
+- Update your existing "gsconfig.php" with the following:
+
+Add New:
+`
+# Sort admin page list by title or menu
+define('GSSORTPAGELISTBY','menu');
+`
+
+Replace section:
+`
+# WYSIWYG editor height (default 500)
+# define('GSEDITORHEIGHT', '400');
+
+# WYSIWYG toolbars (advanced, basic or [custom config]) 
+# define('GSEDITORTOOL', 'advanced');
+
+# WYSIWYG editor language (default en)
+# define('GSEDITORLANG', 'en');
+
+# WYSIWYG Editor Options
+# define('GSEDITOROPTIONS', '');
+`
+With updated:
+`
+# WYSIWYG editor height (default 500)
+# define('GSEDITORHEIGHT', '400');
+
+# WYSIWYG editor language (default en)
+# define('GSEDITORLANG', 'en');
+
+# WYSIWYG toolbars (advanced, basic, advanced, island, CEbar or [custom config])
+define('GSEDITORTOOL', "CEbar");
+
+# WYSIWYG Editor Options
+define('GSEDITOROPTIONS', '
+extraPlugins:"fontawesome5,youtube,codemirror,cmsgrid,colorbutton,oembed,simplebutton,spacingsliders",
+disableNativeSpellChecker : false,
+forcePasteAsPlainText : true
+');
+`
