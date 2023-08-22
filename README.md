@@ -8,9 +8,13 @@ What has changed in this version of the Community Edition?
 
 **New in this Update:**
 
+🌐 11 default languages included (de, es, en, fr, it, ja, nl, pl, pt, ru, uk)
+
 ⭐ Massive Admin included by default (responsive admin + user manager + much much more...).
 
 ⭐ New Admin themes option.
+
+⭐ New gsconfig option (set login page language)
 
 ⭐ ResponsiveCE default template (front-end starter theme).
 
@@ -48,6 +52,9 @@ What has changed in this version of the Community Edition?
 
 Add New:
 ```
+# Login Page Default Language;
+$LANG = 'en_EN'; // es_ES, pl_PL, de_DE, uk_UK, etc.
+
 # Sort admin page list by title or menu
 define('GSSORTPAGELISTBY','menu');
 ```
